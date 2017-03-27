@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KYC UI--prototype</title>
+    <meta name="viewport" content="width=device-width, inital-scale = 1.0">
+    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="./css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="./jqwidgets/styles/jqx.base.css" type="text/css" />
+
+  </head>
+  <body id="home">
+    <section class="container">
+      <div class="content row">
+        <div class="navbar navbar-default navbar-fixed-top">
+           <div class="row">
+               <div class="col-lg-4">
+                <span class="position-searchbar">
+                  <div class="input-group">
+                    <input type="text" class="form-control"  placeholder="Search for...">
+                    <span class="input-group-btn">
+                       <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                  </div>
+                </span>
+               </div>
+           </div>
+           <!--<ul class="nav navbar navbar-right">
+              <li><a href="#">Action</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                   <li><a href="#">Action</a></li>
+                   <li><a href="#">Another action</a></li>
+                   <li><a href="#">Something else here</a></li>
+                 </ul>
+              </li>
+           </ul>-->
+        </div>
+      </div>
+      
+      <div class="row content_panel">
+        <div class="col-lg-12">
+          <section class="col col-lg-2">
+            <!--stacked navigation bar-->
+           <div class="panel panel-default">
+              <!--<div class="panel-heading">Menu</div>-->
+           <div class="panel-body menu_bar">
+                <!-- <ul class="nav nav-pills nav-stacked">
+                      <li role="presentation" class="active">
+                        <a href="#" id="home">
+                          <span class="glyphicon glyphicon-home"></span>Home</a></li>
+                      <li role="presentation"><a href="#" id="Customer">
+                        <span class="glyphicon glyphicon-user"></span>Customer</a></li>
+                      <li role="presentation"><a href="#" id="settings">
+                        <span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                 </ul> -->
+                <table>
+                    
+                  <tr>
+                     <td>
+                         <button id="homeBtn"><span class="glyphicon glyphicon-home"></span> Home </button>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                         <button id="customerBtn"><span class="glyphicon glyphicon-cog"></span> Customer </button>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                         <button id="settingsBtn"><span class="glyphicon glyphicon-cog"></span> Settings </button>
+                    </td>
+                  </tr>
+               </table> 
+                
+               </div>
+             </div>
+          </section>
+
+          <section class="col col-lg-8">
+
+            <div class="panel panel-default col-lg-12">
+
+              <!--<div class="panel-heading">Main application content</div>-->
+              <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+
+              </div>
+            </div>
+          </section>
+
+          <section class="col col-lg-2">
+            <div class="panel panel-default">
+
+               <div id="actionContent">
+                
+                    <div id="searchWidget"> </div>
+               </div>
+
+            </div>
+
+             <div style="visibility: hidden;" id="jqxWidget">
+
+               <!--<input type="button" value="Show" id="showWindowButton" />
+
+                  <div id="window">
+                        <div>
+                           menu action
+                        </div>
+                        <div>
+                            <div style="direction: rtl;">
+                                
+                                <div>
+                                    <h3 style="text-align: right; direction: rtl;"></h3>
+                                    <p class="important-text">
+
+                                    </p>
+                                    <div class="more-text" id="textcontent">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+              </div>
+          </section>
+        </div>
+       </div>
+      </section>
+    </body>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/native.js"></script>
+    <script type="text/javascript" src="./scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./scripts/demos.js"></script>
+    <script type="text/javascript" src="./jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="./jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="./jqwidgets/jqxwindow.js"></script>
+    <script type="text/javascript" src="./jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="./jqwidgets/jqxpanel.js"></script>
+</html>
