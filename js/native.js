@@ -30,23 +30,29 @@
     $('#customerBtn').on('click',function(){
 
   
-           $('#actionContent').find('span').remove();
+           //$('#actionContent').find('span').remove();
 
-     	   $('#actionContent').append('<span> customer Button Clicked </span');
+     	   //$('#actionContent').append('<span> customer Button Clicked </span');
 
-     	   $('#searchWidget').css('visibility','visible');
+     	   //$('#actionContent').append('<div style="visibility: hidden;" id="jqxWidget"><div id="window"><div>menu action</div><div><div style="direction: rtl;"><div><h3 style="text-align: right; direction: rtl;"></h3><p class="important-text"></p><div class="more-text" id="textcontent"></div></div></div></div></div></div>');
+
+     	  /* $('#searchWidget').css('visibility','visible');
 
      	   $('#searchWidget').on('focus',function(){
 
      	   	      $('#searchBtn').jqxButton({width: 100, height: 40});
-     	   });
+     	   });*/
+            
+           //document.getElementById('actionContent').style.visibility = 'visible';
 
+           $('#window').jqxWindow('setContent','Sample content');
+           $('#window').jqxWindow('setContent','<ul class="nav nav-pills nav-stacked"><li role="presentation" class="active"><button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-search"></span>  Search customer</button></li><li role="presentation"><button class="btn btn-default sub_menu_btn" id="accountActivity" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-check"></span> Account activity</button></li><li role="presentation"><button class="btn btn-default sub_menu_btn" id="list" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-folder-open">  Tax records</button></li></ul>')
                
      });
 
     $('#settingsBtn').on('click',function(){
 
-         $('#actionContent').find('span').remove();
+         $('#actionContent').find('ul').remove();
 
          $('#actionContent').append('<span>Settings button clicked</span>');
     });
@@ -68,18 +74,22 @@
 
      var offset = jqxWidget.offset();
 
-     /*$('#window').jqxWindow({
+     $('#window').jqxWindow({
 
-        position: { x: offset.left -1, y: offset.top -22},
+        position: { x: offset.left -1, y: offset.top -1},
         rtl: true,
         resizable: false,
         width: 230,
         height: 400,
-        draggable: false
+        draggable: false,
+        content: function(){
 
-      });*/
+        	//$('#searchBtn').jqxButton({width: 100, height: 40});
+        }
+ 
+      });
 
-    // $('#window').jqxWindow('bringToFront');
+    $('#window').jqxWindow('bringToFront');
 
     //$('#showWindowButton').jqxButton({ width: '100px' });
 
@@ -111,4 +121,12 @@ $(document).ready(function(){
 
       $("#searchWidget").css('visibility','hidden');
 
+
+      
 });
+
+function CustomerAction(id)
+{
+    search_button = document.getElementById(id);
+    alert("Am here");	
+}
