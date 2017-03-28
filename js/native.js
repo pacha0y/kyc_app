@@ -22,47 +22,50 @@
 
  function addEventListeners() {
 
-     /*$('#showWindowButton').mousedown(function () {
-
-          $('#window').jqxWindow('open');
-     });*/
 
     $('#customerBtn').on('click',function(){
 
-  
-           //$('#actionContent').find('span').remove();
+    	buttons = '<ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">';
+    	buttons += '<button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)">';
+    	buttons += '<span class="glyphicon glyphicon-search pull-left"></span>  Search customer</button></li>';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="accountActivity"';
+    	buttons += ' onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-check pull-left"></span>';
+    	buttons += 'Account activity</button></li><li role="presentation" class="active">';
+    	buttons += '<button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)">';
+    	buttons += '<span class="glyphicon glyphicon-folder-open pull-left"></span>  Tax records</button></li>';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="immigration-records"';
+    	buttons += 'onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-book pull-left"></span>';
+    	buttons += 'Immigration records</button></li>';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="criminal-records"';
+    	buttons += 'onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-link pull-left"></span>';
+    	buttons += 'Criminal record</button></li></ul>';
 
-     	   //$('#actionContent').append('<span> customer Button Clicked </span');
-
-     	   //$('#actionContent').append('<div style="visibility: hidden;" id="jqxWidget"><div id="window"><div>menu action</div><div><div style="direction: rtl;"><div><h3 style="text-align: right; direction: rtl;"></h3><p class="important-text"></p><div class="more-text" id="textcontent"></div></div></div></div></div></div>');
-
-     	  /* $('#searchWidget').css('visibility','visible');
-
-     	   $('#searchWidget').on('focus',function(){
-
-     	   	      $('#searchBtn').jqxButton({width: 100, height: 40});
-     	   });*/
-            
-           //document.getElementById('actionContent').style.visibility = 'visible';
-
-           $('#window').jqxWindow('setContent','Sample content');
-           $('#window').jqxWindow('setContent','<ul class="nav nav-pills nav-stacked"><li role="presentation" class="active"><button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-search"></span>  Search customer</button></li><li role="presentation"><button class="btn btn-default sub_menu_btn" id="accountActivity" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-check"></span> Account activity</button></li><li role="presentation"><button class="btn btn-default sub_menu_btn" id="list" onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-folder-open">  Tax records</button></li></ul>')
-               
+        document.getElementById("actionContent-item").innerHTML = buttons;
      });
 
     $('#settingsBtn').on('click',function(){
 
-         $('#actionContent').find('ul').remove();
+        document.getElementById("actionContent-item").innerHTML ='';
 
-         $('#actionContent').append('<span>Settings button clicked</span>');
+        buttons = '<ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">';
+        buttons += '<button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">';
+        buttons += '<span class="glyphicon glyphicon-briefcase pull-left"></span>  Manage User</button></li></ul>';
+
+        document.getElementById('actionContent-item').innerHTML = buttons;
+
     });
 
    
     $('#homeBtn').on('click',function(){
 
-         $('#actionContent').find('span').remove();
+    	document.getElementById("actionContent-item").innerHTML ='';
 
-         $('#actionContent').append('<span> home button clicked </span>');
+    });
+
+    $('#reportsBtn').on('click',function(){
+
+    	document.getElementById("actionContent-item").innerHTML ='';
+
     });
  }
 
@@ -74,7 +77,7 @@
 
      var offset = jqxWidget.offset();
 
-     $('#window').jqxWindow({
+     /*$('#window').jqxWindow({
 
         position: { x: offset.left -1, y: offset.top -1},
         rtl: true,
@@ -89,7 +92,7 @@
  
       });
 
-    $('#window').jqxWindow('bringToFront');
+    $('#window').jqxWindow('bringToFront');*/
 
     //$('#showWindowButton').jqxButton({ width: '100px' });
 
@@ -98,6 +101,8 @@
      $('#settingsBtn').jqxButton({width: 180, height: 40});
  
      $('#homeBtn').jqxButton({width: 180, height: 40});
+
+     $('#reportsBtn').jqxButton({width: 180, height: 40});
 
      
 

@@ -53,22 +53,29 @@
                         <span class="glyphicon glyphicon-user"></span>Customer</a></li>
                       <li role="presentation"><a href="#" id="settings">
                         <span class="glyphicon glyphicon-cog"></span>Settings</a></li>
+                      <li role="presenation"><a href="#" id="list">
+                        <span class="glyphicon glyphicon-th-list"> List</a></li>
                  </ul> -->
                 <table>
                     
                   <tr>
                      <td>
-                         <button id="homeBtn"><span class="glyphicon glyphicon-home"></span> Home </button>
+                         <button class="menu-button" id="homeBtn"><span class="glyphicon glyphicon-home pull-left"></span> Home </button>
                      </td>
                   </tr>
                   <tr>
                      <td>
-                         <button id="customerBtn"><span class="glyphicon glyphicon-cog"></span> Customer </button>
+                         <button class="menu-button" id="customerBtn"><span class="glyphicon glyphicon-user pull-left"></span> Customer </button>
                      </td>
                   </tr>
                   <tr>
                      <td>
-                         <button id="settingsBtn"><span class="glyphicon glyphicon-cog"></span> Settings </button>
+                         <button class="menu-button" id="reportsBtn"><span class="glyphicon glyphicon-file pull-left"></span> Reports </button>
+                    </td>
+                  </tr>
+                  <tr>
+                     <td>
+                         <button class="menu-button"  id="settingsBtn"><span class="glyphicon glyphicon-cog pull-left"></span> Settings </button>
                     </td>
                   </tr>
                </table> 
@@ -97,38 +104,7 @@
             <div class="panel panel-default">
 
                <div id="actionContent">
-
-
-              <div style="visibility: hidden;" id="jqxWidget">
-
-               <!--<input type="button" value="Show" id="showWindowButton" />-->
-
-                  <div id="window">
-                        <div>
-                           menu action
-                        </div>
-                        <div>
-                            <div style="direction: rtl;">
-                                
-                                <div>
-                                    <h3 style="text-align: right; direction: rtl;"></h3>
-                                    <p class="important-text">
-
-                                    </p>
-                                    <div class="more-text" id="textcontent">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-              </div>
-                
-                    <div id="searchWidget">
-                          <button id="searchBtn"><span class="glyphicon glyphicon-search"></span> Search </button>
-                    </div>
-
-
+                   <div id="actionContent-item"></div>
                </div>
 
             </div>
