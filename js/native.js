@@ -55,14 +55,60 @@
 
     });
 
+    $('#reportsBtn').on('click',function(){
+
+      document.getElementById("actionContent-item").innerHTML ='';
+
+      buttons = '<div class="panel-group sub_menu_with_accordion" id="accordion">\
+    <div class="panel panel-default">\
+      <div class="panel-heading">\
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">\
+          <span class="glyphicon glyphicon-file pull-left"></span>Collapsible Group 1</a>\
+      </div>\
+      <div id="collapse1" class="panel-collapse collapse">\
+        <ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li>\
+        <li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li></ul></div>\
+    </div>\
+    <div class="panel panel-default">\
+      <div class="panel-heading">\
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">\
+          <span class="glyphicon glyphicon-file pull-left"></span>Collapsible Group 2</a>\
+      </div>\
+      <div id="collapse2" class="panel-collapse collapse">\
+        <ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li>\
+        <li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li></ul>\
+    </div>\
+    </div>\
+    <div class="panel panel-default">\
+      <div class="panel-heading">\
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">\
+          <span class="glyphicon glyphicon-file pull-left"></span>Collapsible Group 3</a>\
+      </div>\
+      <div id="collapse3" class="panel-collapse collapse">\
+        <ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li>\
+        <li role="presentation" class="active">\
+        <button class="btn btn-default sub_menu_btn" id="manage-user" onclick="CustomerAction(this.id)">\
+        <span class="glyphicon glyphicon-briefcase pull-left"></span>Manage User</button></li></ul>\
+    </div>\
+    </div>\
+  </div>';
+
+      document.getElementById("actionContent-item").innerHTML = buttons;
+
+     });
+
    
     $('#homeBtn').on('click',function(){
-
-    	document.getElementById("actionContent-item").innerHTML ='';
-
-    });
-
-    $('#reportsBtn').on('click',function(){
 
     	document.getElementById("actionContent-item").innerHTML ='';
 
@@ -132,6 +178,7 @@ $(document).ready(function(){
 
 function CustomerAction(id)
 {
-    search_button = document.getElementById(id);
+    container = document.getElementById('chartContainer');
+    container.innerHTML = "Am here"
     alert("Am here");	
 }

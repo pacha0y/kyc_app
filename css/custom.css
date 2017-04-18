@@ -33,3 +33,12 @@
 	text-align: inherit;
 	padding-left: 20px !important;
 }
+.sub_menu_with_accordion a
+{
+	text-decoration: none;
+	color: #000;
+}
+.sub_menu_with_accordion .panel-heading
+{
+	
+}
