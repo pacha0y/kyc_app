@@ -1,26 +1,4 @@
-
-     //$('#showMenuActionContent').jqxButton({width: 150, height: 40,textImageRelation: "imageBeforeText", textPosition: "left", imgSrc: "./images/woman.png"});
-
-//  function load_sub_menu(id)
-//  {
-//  	sub_menu = document.getElementById('load_sub_menu')
-
-//  	if (id == "customer")
-//  	{
-//  		sub_menu.innerHTML = "<a href='#'>Hello customer</a>"
-	
-//  	}else if (id == "home")
-//  	{
-//  		sub_menu.innerHTML = "<a href='#'>Hello home</a>"
-//  	}
-
-//  }
-
-// alert(sub_menu)
-
-
-
- function addEventListeners() {
+function addEventListeners() {
 
 
     $('#customerBtn').on('click',function(){
@@ -39,6 +17,7 @@
     	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="criminal-records"';
     	buttons += 'onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-link pull-left"></span>';
     	buttons += 'Criminal record</button></li></ul>';
+        
 
         document.getElementById("actionContent-item").innerHTML = buttons;
      });
@@ -113,6 +92,11 @@
     	document.getElementById("actionContent-item").innerHTML ='';
 
     });
+
+    $('#aboutBtn').on('click',function(){
+
+        document.getElementById("actionContent-item").innerHTML ='About button clicked'
+    });
  }
 
 
@@ -150,7 +134,7 @@
 
      $('#reportsBtn').jqxButton({width: 180, height: 40});
 
-     
+     $('#aboutBtn').jqxButton({width: 180, height: 40});
 
     // $("#showMenuActionContent").jqxButton({ width: 150, height: 40, imgPosition: "left", textPosition: "left", imgSrc: "./images/woman.png", textImageRelation: "imageBeforeText" });
 

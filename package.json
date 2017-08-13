@@ -1,0 +1,21 @@
+{
+  "name": "kyc-app-ui",
+  "version": "1.0.0",
+  "description": "Know Your Customer app",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacha0y/kyc_app.git"
+  },
+  "author": "Comish & Pachawo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pacha0y/kyc_app/issues"
+  },
+  "homepage": "https://github.com/pacha0y/kyc_app#readme"
+}
