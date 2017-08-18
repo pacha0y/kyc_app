@@ -29,14 +29,14 @@ http.createServer(function(req, res){
         var fpath = path.join(__dirname, req.url);
         var fileStream = fs.createReadStream(fpath, "UTF-8");
 
-        res.writeHead(200, {"Content-Type":"text/ttf"});
+        res.writeHead(200, {"Content-Type":"application/x-font-ttf"});
         fileStream.pipe(res);
     } else if(req.url.match(/.woff2$/) || (req.url.match(/.woff$/))){
 
         var fpath = path.join(__dirname, req.url);
         var fileStream = fs.createReadStream(fpath, "UTF-8");
 
-        res.writeHead(200, {"Content-Type":"text/ttf"});
+        res.writeHead(200, {"Content-Type":"application/x-font-ttf"});
         fileStream.pipe(res);
         
     } else if(req.url.match(/.js$/)) {
