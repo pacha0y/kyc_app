@@ -11,13 +11,13 @@ http.createServer(function(req, res){
 
     if(req.url === "/"){
 
-        fs.readFile("./index.html","UTF-8",function(err,html){
+        fs.readFile("./login.html","UTF-8",function(err,html){
             res.writeHead(200,{"Content-Type":"text/html"});
             res.end(html);
         });
-    } else if(req.url === "/login"){
+    } else if(req.url === "/index"){
 
-        fs.readFile("./login.html","UTF-8",function(err,html){
+        fs.readFile("./index.html","UTF-8",function(err,html){
             res.writeHead(200,{"Content-Type":"text/html"});
             res.end(html);
         });
