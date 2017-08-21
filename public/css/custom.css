@@ -17,11 +17,13 @@ body{
 	position: inherit;
 	padding-top: 15px !important;
 	margin-top: 35px !important;
-	width: 1350px !important;
+}
+.menu {
+    align: center;
 }
 .menu_bar > button
 {
-	width: 200px;
+	width: 400px;
 }
 .sub_menu_btn
 {

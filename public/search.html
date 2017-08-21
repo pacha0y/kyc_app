@@ -1,0 +1,74 @@
+<div class="col-md-12">
+    <div class="col-md-6">
+        <label for="test_status">Search by:</label>
+        <select class="form-control force-open" id="test_status" name="test_status">
+        <option value="0">[-- select --]</option>
+        <option value="1">First name</option>
+        <option value="2">Last name</option>
+        <option value="3">Account Number</option>
+        <option value="4">Branch</option>
+    </select>
+    </div>
+    <div class="col-md-6" style="margin-top:24px;">
+        <div class="col-md-12">
+            <div class="col-md-8">
+                <input class="form-control barcode" placeholder="Search" name="search" id="search" type="text">
+            </div>
+            <div class="col-md-4">
+                <input class="btn btn-primary" value="Search" type="submit">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">&nbsp;</div>
+<div class="col-md-12">
+    <div class="panel panel-primary tests-log">
+        <div class="panel-heading ">
+            <div class="container-fluid">
+                <div class="row less-gutter">
+                    <div class="col-md-11">
+                        <span class="glyphicon glyphicon-filter"></span>Search results
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th class="col-md-4" style="width: 13.5% !important;"> Date Registered</th>
+                    <th class="col-md-2">Customer name</th>
+                    <th class="col-md-2">Account Number</th>
+                    <th class="col-md-2">Branch</th>
+                    <th class="col-md-2">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="col-md-4" style="width: 13.5% !important;"> 23-Aug-2016</td>
+                    <td class="col-md-2">Comish Omar</td>
+                    <td class="col-md-2">2229087</td>
+                    <td class="col-md-2">Blantyre</td>
+                    <td class="col-md-2">
+                        <button class="main-view main-view-124471 btn btn-sm btn-success"
+                           id="view-details-124471-link"
+                           onclick="viewcustomer(this.id)"
+                           title="View Test Details"
+                           style="display: inline-block;">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        View
+                    </button></td>
+                </tr>
+                </tbody>
+
+            </table>
+
+            <!-- ul class="pagination">
+                <li class="disabled"><span>«</span></li><li class="active"><span>1</span></li><li><a href="http://localhost:8001/test?page=2" alt="">2</a></li><li><a href="http://localhost:8001/test?page=3" alt="">3</a></li><li><a href="http://localhost:8001/test?page=4" alt="">4</a></li><li><a href="http://localhost:8001/test?page=5" alt="">5</a></li><li><a href="http://localhost:8001/test?page=6" alt="">6</a></li><li><a href="http://localhost:8001/test?page=7" alt="">7</a></li><li><a href="http://localhost:8001/test?page=8" alt="">8</a></li><li class="disabled"><span>...</span></li><li><a href="http://localhost:8001/test?page=403" alt="">403</a></li><li><a href="http://localhost:8001/test?page=404" alt="">404</a></li><li><a href="http://localhost:8001/test?page=2" alt="next">»</a></li>    </ul>
+
+-->
+
+
+        </div>
+    </div>
+</div>

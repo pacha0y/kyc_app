@@ -93,7 +93,7 @@ window.onload = function () {
 
   </head>
   <body>
-    <section class="container">
+    <div class="container">
       <div class="content row">
         <div class="navbar navbar-default navbar-fixed-top">
           <div class="row">
@@ -113,11 +113,10 @@ window.onload = function () {
       
       <div class="row content_panel">
         <div class="col-lg-12">
-          <section class="col col-lg-2">
-           <div class="panel panel-default">
-           <div class="panel-body menu_bar">
+          <div class="col col-lg-2">
+            <div class="panel panel-default menu">
+              <div class="panel-body menu_bar">
                 <table>
-                    
                   <tr>
                      <td>
                          <button class="menu-button" id="homeBtn"><span class="glyphicon glyphicon-home pull-left"></span> Home </button>
@@ -139,42 +138,35 @@ window.onload = function () {
                     </td>
                   </tr>
                   <tr>
-                      <td>
-                            <button class="menu-button"  id="aboutBtn"><span class="glyphicon glyphicon-cog pull-left"></span> About </button>                           
-                      </td>
+                    <td>
+                      <button class="menu-button"  id="aboutBtn"><span class="glyphicon glyphicon-cog pull-left"></span> About </button>
+                    </td>
                   </tr>
-               </table> 
-                
-               </div>
-             </div>
-          </section>
-
-          <section class="col col-lg-8">
-
-            <div class="panel panel-default col-lg-12">
-              <div id='chartContainer'>
-
+               </table>
               </div>
             </div>
+          </div>
 
-              
-          </section>
-
-          <section class="col col-lg-2">
-            <div class="panel panel-default">
-
-               <div id="actionContent">
-                   <div id="actionContent-item"></div>
-               </div>
-
+          <div class="col col-lg-8">
+            <div class="panel panel-default col-lg-12">
+              <div id='chartContainer'>
+              </div>
             </div>
+          </div>
 
+          <div class="col col-lg-2">
+            <div class="panel panel-default">
+              <div id="actionContent">
+                <div id="actionContent-item"></div>
+              </div>
+            </div>
+          </div>
 
-          </section>
         </div>
-       </div>
-      </section>
-    </body>
+      </div>
+
+    </div>
+  </body>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/native.js"></script>

@@ -163,28 +163,39 @@ $(document).ready(function(){
 function CustomerAction(id)
 {
     container = document.getElementById('chartContainer');
-    html_code = '';
+    var template;
     var xmlhttp=new XMLHttpRequest();
     switch(id) {
         case "search_customer":
-            xmlhttp.open('GET', "search.html", false);
-
+            template = "search.html";
             break;
         case "account_activity":
-            html_code = '// Customer activities';
+            template = "account_activity.html";
             break;
         case 'tax_records':
-            html_code = '// Tax records';
+            template = "tax_records.html";
             break;
         case 'immigration_records':
-            html_code = '// Immigration records';
+            template = "immigration_records.html";
             break;
         case 'criminal_records':
-            html_code = '// Criminal records';
+            template = "criminal_records.html";
             break;
         default:
             html_code = '';
     }
+    xmlhttp.open('GET',template , false);
     xmlhttp.send();
     container.innerHTML = xmlhttp.response
+}
+
+function viewcustomer(id)
+{
+    container = document.getElementById('chartContainer');
+    var view_template = 'view_customer.html';
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.open('GET',view_template , false);
+    xmlhttp.send();
+    container.innerHTML = xmlhttp.response
+
 }
