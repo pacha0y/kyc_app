@@ -1,66 +1,37 @@
 var http = require('http');
 var fs = require('fs');
 var path = require("path");
+var express = require("express");
+var request = require('request');
 
-//var file = fs.readdirSync('./images/');
-//console.log(file);
+var url = 'http://pach:pachccc123@127.0.0.1:5984/'
+var db = 'mydatabase/'
+var id = 'document_id'
 
-http.createServer(function(req, res){
-
-    console.log(`${req.method} request for ${req.url}`);
-
-    if(req.url === "/"){
-
-        fs.readFile("./index.html","UTF-8",function(err,html){
-            res.writeHead(200,{"Content-Type":"text/html"});
-            res.end(html);
+// Create a database/collection inside CouchDB
+request.put(url + db, function(err, resp, body) {
+    // Add a document with an ID
+    request.put({
+        url: url + db + id,
+        body: {message:'New Shiny Document', user: 'stefan'},
+        json: true,
+    }, function(err, resp, body) {
+        // Read the document
+        request(url + db + id, function(err, res, body) {
+            console.log(body["user"])
         });
+    });
+});
 
-    } else if (req.url.match(/.css$/)){
+var app = express();
 
-        var cssPath = path.join(__dirname, req.url);
-        var fileStream = fs.createReadStream(cssPath, "UTF-8");
+app.use(function(req, res, next){
+    console.log(`${req.method} for ${req.url}`);
+    next()
+});
 
-        res.writeHead(200, {"Content-Type":"text/css"});
-        fileStream.pipe(res);
+app.use(express.static("./public"));
 
-    } else if(req.url.match(/.ttf$/)) {
+app.listen(3000)
 
-        var fpath = path.join(__dirname, req.url);
-        var fileStream = fs.createReadStream(fpath, "UTF-8");
-
-        res.writeHead(200, {"Content-Type":"application/x-font-ttf"});
-        fileStream.pipe(res);
-    } else if(req.url.match(/.woff2$/) || (req.url.match(/.woff$/))){
-
-        var fpath = path.join(__dirname, req.url);
-        var fileStream = fs.createReadStream(fpath, "UTF-8");
-
-        res.writeHead(200, {"Content-Type":"application/x-font-ttf"});
-        fileStream.pipe(res);
-        
-    } else if(req.url.match(/.js$/)) {
-         var jsPath = path.join(__dirname, req.url);
-         var fileStream = fs.createReadStream(jsPath, "UTF-8");
-
-         res.writeHead(200, {"Content-Type": "text/javascript"});
-         fileStream.pipe(res);
-
-    } else if (req.url.match(/.base.css$/)){
-
-        var foldername = '/jqwidgets/styles/';
-        var cssPath = path.join(__dirname,foldername, req.url);
-        var fileStream = fs.createReadStream(cssPath, "UTF-8");
-
-        res.writeHead(200, {"Content-Type":"text/css"});
-        fileStream.pipe(res);
-
-    }else{
-        res.writeHead(404,{"Content-Type":"text/plain"});
-        res.end("404. Page not found");
-    }
-
-
-}).listen(3000);
-
-console.log("Server listening on port 3000");
+console.log("Application running on http://localhost:3000");
