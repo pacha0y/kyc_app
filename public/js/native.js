@@ -4,17 +4,17 @@ function addEventListeners() {
     $('#customerBtn').on('click',function(){
 
     	buttons = '<ul class="nav nav-pills nav-stacked"><li role="presentation" class="active">';
-    	buttons += '<button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)">';
+    	buttons += '<button class="btn btn-default sub_menu_btn" id="search_customer" onclick="CustomerAction(this.id)">';
     	buttons += '<span class="glyphicon glyphicon-search pull-left"></span>  Search customer</button></li>';
-    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="accountActivity"';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="account_activity"';
     	buttons += ' onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-check pull-left"></span>';
     	buttons += 'Account activity</button></li><li role="presentation" class="active">';
-    	buttons += '<button class="btn btn-default sub_menu_btn" id="search" onclick="CustomerAction(this.id)">';
+    	buttons += '<button class="btn btn-default sub_menu_btn" id="tax_records" onclick="CustomerAction(this.id)">';
     	buttons += '<span class="glyphicon glyphicon-folder-open pull-left"></span>  Tax records</button></li>';
-    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="immigration-records"';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="immigration_records"';
     	buttons += 'onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-book pull-left"></span>';
     	buttons += 'Immigration records</button></li>';
-    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="criminal-records"';
+    	buttons += '<li role="presentation"><button class="btn btn-default sub_menu_btn" id="criminal_records"';
     	buttons += 'onclick="CustomerAction(this.id)"><span class="glyphicon glyphicon-link pull-left"></span>';
     	buttons += 'Criminal record</button></li></ul>';
         
@@ -163,6 +163,28 @@ $(document).ready(function(){
 function CustomerAction(id)
 {
     container = document.getElementById('chartContainer');
-    container.innerHTML = "Am here"
-    alert("Am here");	
+    html_code = '';
+    var xmlhttp=new XMLHttpRequest();
+    switch(id) {
+        case "search_customer":
+            xmlhttp.open('GET', "search.html", false);
+
+            break;
+        case "account_activity":
+            html_code = '// Customer activities';
+            break;
+        case 'tax_records':
+            html_code = '// Tax records';
+            break;
+        case 'immigration_records':
+            html_code = '// Immigration records';
+            break;
+        case 'criminal_records':
+            html_code = '// Criminal records';
+            break;
+        default:
+            html_code = '';
+    }
+    xmlhttp.send();
+    container.innerHTML = xmlhttp.response
 }
