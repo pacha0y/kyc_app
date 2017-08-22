@@ -18,7 +18,7 @@ request.put(url + db, function(err, resp, body) {
     }, function(err, resp, body) {
         // Read the document
         request(url + db + id, function(err, res, body) {
-            console.log(body["user"])
+            //console.log(body["user"])
         });
     });
 });
