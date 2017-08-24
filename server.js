@@ -3,27 +3,30 @@ var fs = require('fs');
 var path = require("path");
 var express = require("express");
 var request = require('request');
+var mysql = require('mysql');
+var db = require(__dirname + "/config/database.json")['development']
 
-var url = 'http://pach:pachccc123@127.0.0.1:5984/'
-var db = 'mydatabase/'
-var id = 'document_id'
+var app = express();
 
 // Create a database/collection inside CouchDB
-request.put(url + db, function(err, resp, body) {
-    // Add a document with an ID
-    request.put({
-        url: url + db + id,
-        body: {message:'New Shiny Document', user: 'stefan'},
-        json: true,
-    }, function(err, resp, body) {
-        // Read the document
-        request(url + db + id, function(err, res, body) {
-            //console.log(body["user"])
-        });
+var con = mysql.createConnection({
+    host: db.host,
+    user: db.username,
+    password: db.password,
+    database: db.database
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    sql = "SELECT * FROM customers"
+    con.query(sql, function (err, result, fields) {
+        if (err) throw err;
+        console.log(`>> ${sql}`)
+        console.log(result);
     });
 });
 
-var app = express();
+
 
 app.use(function(req, res, next){
     console.log(`${req.method} for ${req.url}`);
